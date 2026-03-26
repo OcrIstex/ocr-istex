@@ -1,4 +1,4 @@
-# Méthodologie
+# Méthodologie (inconsistante)
 
 ## Extraction des documents ElasticSearch
 
