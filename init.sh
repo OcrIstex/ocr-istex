@@ -19,7 +19,7 @@ ATTACH '/home/onyxia/work/data/istex-search-metadata.db' AS metadata;
 
 CREATE TABLE data AS (
     SELECT
-        DECADE(MAKE_DATE(publicationDate::INT)) AS decade,
+        DECADE(MAKE_DATE(publicationDate::INT, 1, 1)) * 10 AS decade,
         *
     FROM ocr_detector.documents
     JOIN metadata.records ON ark = arkIstex
