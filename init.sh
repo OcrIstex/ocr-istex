@@ -7,10 +7,8 @@ chown -R onyxia:users ${GIT_REPO}/
 REQUIREMENTS_FILE=${GIT_REPO}/requirements.txt
 [ -f $REQUIREMENTS_FILE ] && pip install -r $REQUIREMENTS_FILE
 
-
 mkdir -p data
-mc cp s3/eonm/diffusion/istex-search-metadata.db ./data/istex-search-metadata.db
-mc cp $OCR_DATA ./data/ocr.db
 
-# Open the relevant notebook when starting Jupyter Lab
-# echo "c.LabApp.default_url = '/lab/tree/${GIT_REPO}/OCR dans Istex.ipynb'" >> /home/onyxia/.jupyter/jupyter_server_config.py
+mc cp $ISTEX_SEARCH_METADATA ./data/istex-search-metadata.db
+mc cp $OCR_FULLTEXT_DATA ./data/ocr-fulltext.db
+mc cp $OCR_DETECTOR_DATA ./data/ocr-detector.db
