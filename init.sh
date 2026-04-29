@@ -7,6 +7,9 @@ chown -R onyxia:users ${GIT_REPO}/
 REQUIREMENTS_FILE=${GIT_REPO}/requirements.txt
 [ -f $REQUIREMENTS_FILE ] && pip install -r $REQUIREMENTS_FILE
 
+sudo apt-get update && sudo apt-get install -y locales
+sudo locale-gen fr_FR.UTF-8
+
 mkdir -p data
 
 mc cp $ISTEX_SEARCH_METADATA ./data/istex-search-metadata.db
